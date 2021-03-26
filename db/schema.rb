@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_120730) do
   create_table "appointments", force: :cascade do |t|
     t.string "service"
     t.string "time"
-    t.float "price"
+    t.float "price", default: 0.0
     t.string "status", default: "Waiting for confirm"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

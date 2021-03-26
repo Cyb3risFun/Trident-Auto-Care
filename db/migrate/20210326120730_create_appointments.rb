@@ -3,7 +3,7 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
     create_table :appointments do |t|
       t.string :service
       t.string :time
-      t.float :price
+      t.float :price, default: 0.0
       t.string :status, default: "Waiting for confirm"
 
       t.timestamps
