@@ -1,19 +1,19 @@
 class AppointmentsController < ApplicationController
 	before_action :find_apt, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@appointments=Appointment.all.order("created_at DESC")
 	end
 
 	def show
-		
 	end
 
 	def new
-		@appointment=Appointment.new
+		@appointment=current_user.appointments.build
 	end
 
 	def create
-		@appointment=Appointment.new(apt_params)
+		@appointment=current_user.appointments.build(apt_params)
 		if @appointment.save
 			redirect_to @appointment
 		else
