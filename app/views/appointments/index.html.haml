@@ -1,1 +1,3 @@
-%h1 Test
+-@appointments.each do |apt|
+ %h2= link_to apt.time, apt
+=link_to "Make New Appointment", new_appointment_path
