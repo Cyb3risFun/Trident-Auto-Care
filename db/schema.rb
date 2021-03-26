@@ -15,8 +15,14 @@ ActiveRecord::Schema.define(version: 2021_03_26_120730) do
   create_table "appointments", force: :cascade do |t|
     t.string "service"
     t.string "time"
+    t.string "vehicle_vin"
+    t.string "vehicle_name"
+    t.string "vehicle_manufacture"
+    t.string "vehicle_type"
+    t.integer "vehicle_year"
+    t.string "vehicle_license_plate_num"
     t.float "price", default: 0.0
-    t.string "status", default: "Waiting for confirm"
+    t.string "status", default: "Pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
