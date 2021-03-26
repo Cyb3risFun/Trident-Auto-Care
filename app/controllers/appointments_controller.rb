@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
 	before_action :find_apt, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@appointments=Appointment.all.order("created_at DESC")
 	end
@@ -34,7 +35,11 @@ class AppointmentsController < ApplicationController
 
 	def destroy
 		@appointment.destroy
-		redirect_to root_path
+		redirect_to '/all_apt'
+	end
+
+	def printall
+		@appointment=Appointment.where("user_id=?",current_user.id)
 	end
 
 	private
