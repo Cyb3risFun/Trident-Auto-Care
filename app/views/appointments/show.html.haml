@@ -1,6 +1,7 @@
 %h1= @appointment.service
 %p= @appointment.time
 %p= @appointment.vehicle_type
+%p= @appointment.price
 
 = link_to "Edit", edit_appointment_path(@appointment)
 = link_to "Cancel", appointment_path(@appointment), method: :delete, data:{confirm: "Cancel Appointment?"}

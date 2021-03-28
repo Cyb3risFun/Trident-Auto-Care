@@ -18,9 +18,15 @@
           <nav class="collapse navbar-collapse navbar-ex1-colapse">
             <% if user_signed_in? -%>
              <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to current_user.First_name, edit_user_registration_path %></li>
               <li><%= link_to "Make Appointment", new_appointment_path %></li>
-              <li><%= link_to "Account", edit_user_registration_path %></li>
               <li><%= link_to "Sign Out", destroy_user_session_path, :method=> :delete %></li>
+            </ul>
+            <% elsif employee_signed_in? -%>
+             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to current_employee.First_name, edit_employee_registration_path %></li>
+              <li><%= link_to "List Appointments", new_appointment_path %></li>              
+              <li><%= link_to "Sign Out", destroy_employee_session_path, :method=> :delete %></li>
             </ul>
             <% else -%>
               <ul class="nav navbar-nav pull-right">
@@ -38,6 +44,7 @@
         <%= content_tag(:div, msg, class: "alert alert-%{name}") %>
         <% end %>
     <div id="container" class="col-md-9 center-block">
+      
       <%= yield %>
     </div>
   </div>
