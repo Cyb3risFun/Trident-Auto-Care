@@ -1,0 +1,3 @@
+-@appointment.each do |apt|
+ %h2= link_to apt.time, employee_show_apt_path(apt)
+ %p= apt.status

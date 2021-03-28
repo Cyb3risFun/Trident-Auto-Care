@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
 	before_action :find_apt, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index]
 
 	def index
 		@appointments=Appointment.all.order("created_at DESC")
@@ -61,25 +61,25 @@ class AppointmentsController < ApplicationController
 		price=0.0
 		case @appointment.service
 		when "Full detail"
-			if @appointment.vehicle_type=="car"
+			if @appointment.vehicle_type=="Regular"
 				price=80.0
 			else
 				price=85.0
 			end
 		when "Interior", "Exterior"
-			if @appointment.vehicle_type=="car"
+			if @appointment.vehicle_type=="Regular"
 				price=45.0
 			else
 				price=50.0
 			end
 		when "Ceramic pro"
-			if @appointment.vehicle_type=="car"
+			if @appointment.vehicle_type=="Regular"
 				price=1200.0
 			else
 				price=1300.0
 			end
 		when "Paint correction"
-			if @appointment.vehicle_type=="car"
+			if @appointment.vehicle_type=="Regular"
 				price=250.0
 			else
 				price=300.0

@@ -1,0 +1,9 @@
+%h1= @appointment.service
+%p= @appointment.time
+%p= @appointment.vehicle_type
+%p= @appointment.price
+%p= @appointment.status
+
+= link_to "Approved", approved_path(@appointment.id)
+= link_to "Cancel", employee_cancel_apt_path(@appointment.id), data:{confirm: "Cancel Appointment?"}
+= link_to "Home", root_path
