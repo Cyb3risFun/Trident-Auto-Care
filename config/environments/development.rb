@@ -78,7 +78,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "tridentcare1234@gmail.com",
-    password: "group2@123"
+    password: "g2@1-9&*"
   }
 
   # Uncomment if you wish to allow Action Cable access from any origin.

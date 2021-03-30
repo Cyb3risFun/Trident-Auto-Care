@@ -1,10 +1,11 @@
 =simple_form_for @appointment do |f|
-	= f.input :service, collection: [ "Full detail", "Interior", "Exterior", "Ceramic pro", "Paint correction"]
-	= f.input :time
-	= f.input :vehicle_vin
-	= f.input :vehicle_name
-	= f.input :vehicle_manufacture
-	= f.input :vehicle_type, collection: [ "Regular", "SUV"]
-	= f.input :vehicle_year
-	= f.input :vehicle_license_plate_num
+	= f.error_notification 
+	= f.input :service, collection: [ "Full detail", "Interior", "Exterior", "Ceramic pro", "Paint correction"], required: true
+	= f.input :time, "data-provide" => 'datepicker' , required: true
+	= f.input :vehicle_vin, required: true
+	= f.input :vehicle_name, required: true
+	= f.input :vehicle_manufacture, required: true
+	= f.input :vehicle_type, collection: [ "Regular", "SUV"], required: true
+	= f.input :vehicle_year, required: true
+	= f.input :vehicle_license_plate_num, required: true
 	= f.button :submit

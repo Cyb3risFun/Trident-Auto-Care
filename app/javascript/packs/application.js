@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 //= require jquery
 //= require bootstrap-sprockets
+//= require bootstrap-timepicker
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"

@@ -2,8 +2,11 @@
 %p= @appointment.time
 %p= @appointment.vehicle_type
 %p= @appointment.price
+=mail_to @email
 %p= @appointment.status
 
+
 = link_to "Approved", approved_path(@appointment.id)
+= link_to "Time Conflict",time_conflict_path(@appointment.id)
 = link_to "Cancel", employee_cancel_apt_path(@appointment.id), data:{confirm: "Cancel Appointment?"}
 = link_to "Home", root_path
