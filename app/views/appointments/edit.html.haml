@@ -1,3 +1,5 @@
 %h1 Edit
-
+%h2= "Appointments on the following days will not be approved"
+-$restrict_day.each do |day|
+ %p=day
 = render 'editform'

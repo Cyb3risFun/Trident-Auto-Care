@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get '/i_am_loyal_to_trident/approved/:id'=> "records#approved", :as => :approved
   get '/i_am_loyal_to_trident/time_conflict/:id'=> "records#time_conflict", :as => :time_conflict
   get '/i_am_loyal_to_trident/cancel/:id' => "records#destroy", :as => :employee_cancel_apt
+  get '/i_am_loyal_to_trident/restrict/:day'=>"records#restrict_day", :as=> :restrict
+  get '/i_am_loyal_to_trident/reset'=>"records#reset_restrict", :as=> :reset
 end
