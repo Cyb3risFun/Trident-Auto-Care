@@ -1,3 +1,4 @@
+%p="Time format: mm/dd/yy:hh:mm(24h format)"
 =simple_form_for @appointment do |f|
 	= f.input :service, collection: [ "Full detail", "Interior", "Exterior", "Ceramic pro", "Paint correction"], required: true
 	= f.input :time, required: true
