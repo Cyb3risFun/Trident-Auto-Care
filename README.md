@@ -3,9 +3,16 @@
 kali linux install 
 
 sudo apt-get update
+
 sudo apt-get upgrade
+
+
 sudo apt-get ruby
+
+
 sudo apt-get install ruby
+
+
 sudo gem install rails
 git clone https://github.com/sleepLazy/Trident-Auto-Care.git
 cd Trident-Auto-Care
